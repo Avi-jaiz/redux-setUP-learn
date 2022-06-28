@@ -1,0 +1,73 @@
+redux has 4 important components
+
+1. Store
+2. Action
+3. Reducer
+4. Dispatch
+
+
+
+/* first import createStore from redux 
+like this  */
+import {createStore} from 'redux'
+
+
+/* then create ACTIONS  */
+
+/* Here we have two actions so */
+
+const increment =()=>
+{
+    return {
+        type:"INCREMENT"
+    }
+}
+
+const decrement =()=>
+{
+    return {
+        type:"DECREMENT"
+    }
+}
+
+/* then create Reducer here, reducer takes two parameters as initial State and action */
+/* inside reducer logic in written, what kind of values will be updated */
+
+const counter =(state=0,action)=>
+{
+    switch(action.type)
+    {
+        case "INCREMENT":
+        return state+1;
+
+        case "DECREMENT":
+        return state+1;
+    }
+}
+
+/* then create store */
+/* This store will take parameter (reducer) */
+
+let store = createStore(counter)
+
+/* then create Dispatch /*
+/*Dispatch will push the data to the store  */
+/* and dispatch method will take action */
+
+
+store.dipatch(increment())
+
+/* to show in console we will use store.subscribe(()=>console.log(store.getState())) */
+/* here inside console.log()  it will access store.getState()
+
+
+
+
+
+
+
+
+
+
+
+
